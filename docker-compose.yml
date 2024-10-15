@@ -1,0 +1,9 @@
+version: '3'
+services:
+  randoop:
+    build: .
+    volumes:
+      - ./tests:/app/generated_tests    # Monta o diretório para salvar os testes gerados
+      - ./src:/app/src                  # Monta o código fonte na pasta correta dentro do container
+    container_name: randoop-tester
+    tty: true
